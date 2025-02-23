@@ -1,5 +1,8 @@
+// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Card.tsx
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { useTheme } from '../context/ThemeContext';
+import styles from './Card.module.css';
 
 interface CardProps {
   text: string;
@@ -9,6 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ text, imageSrc, id }) => {
   const router = useRouter();
+  const { theme } = useTheme();
 
   const handleClick = () => {
     router.push(`/posts/${id}`);
@@ -17,9 +21,9 @@ const Card: React.FC<CardProps> = ({ text, imageSrc, id }) => {
   return (
     <div
       onClick={handleClick}
-      style={{ border: '1px solid #ccc', padding: '16px', borderRadius: '8px', backgroundColor: '#fff', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', cursor: 'pointer' }}
+      className={`${styles.card} ${theme === 'dark' ? styles.dark : styles.light}`}
     >
-      {imageSrc && <img src={imageSrc} alt={text} style={{ width: '100%', borderRadius: '8px 8px 0 0' }} />}
+      {imageSrc && <img src={imageSrc} alt={text} className={styles.image} />}
       <p>{text}</p>
     </div>
   );

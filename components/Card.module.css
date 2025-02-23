@@ -1,0 +1,28 @@
+/* filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Card.module.css */
+.card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .light {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .dark {
+    background-color: #333;
+    color: #fff;
+  }

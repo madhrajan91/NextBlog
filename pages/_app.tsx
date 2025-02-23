@@ -1,6 +1,8 @@
-import type { AppProps } from 'next/app';
-import { ThemeProvider } from '../context/ThemeProvider';
+// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/_app.tsx
 import '../styles/globals.css';
+import { ThemeProvider } from '../context/ThemeContext';
+
+import { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

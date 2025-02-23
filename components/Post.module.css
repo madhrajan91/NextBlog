@@ -1,3 +1,6 @@
+/* filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Post.module.css */
+@import '../app/common.module.css';
+
 .post {
   margin: 20px auto;
   padding: 20px;
@@ -6,6 +9,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: border-color 0.3s;
 }
 
 .image {
@@ -50,4 +54,16 @@
 
 .likeCount {
   font-size: 1.2em;
+}
+
+.light {
+  border: 2px solid #ccc;
+  background-color: #fff;
+  color: #000;
+}
+
+.dark {
+  border: 2px solid #555;
+  background-color: #333;
+  color: #fff;
 }

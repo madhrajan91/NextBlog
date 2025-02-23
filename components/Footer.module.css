@@ -1,6 +1,31 @@
+/* filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Footer.module.css */
 .footer {
-  background-color: var(--footer-background-color);
   padding: 10px;
-  color: var(--footer-text-color);
   text-align: center;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.light {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
 }

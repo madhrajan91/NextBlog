@@ -1,0 +1,18 @@
+/* filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Sidebar.module.css */
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}

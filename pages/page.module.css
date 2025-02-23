@@ -1,13 +1,9 @@
+/* filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/page.module.css */
+@import '../app/common.module.css';
+
 body {
   background-color: white;
   color: black;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
 }
 
 .header {
@@ -45,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 320px; /* Adjust this value to match the sidebar width + padding */
 }
 
 .intro {
@@ -57,10 +54,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 800px;
-  width: 100%;
-  justify-content: center;
+  gap: 20px;
 }
 
 .footer {
@@ -117,4 +111,24 @@ body {
 
 .likeCount {
   font-size: 1.2em;
+}
+
+.light {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.maincontainer {
+  display: flex;
+  flex: 1;
+  background-color: inherit; /* Inherit background color from theme */
+}
+
+.grid {
+  background-color: inherit; /* Inherit background color from theme */
 }
