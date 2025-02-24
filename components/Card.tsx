@@ -1,7 +1,7 @@
-// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Card.tsx
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '../context/ThemeContext';
+import Image from 'next/image';
 import styles from './Card.module.css';
 
 interface CardProps {
@@ -23,7 +23,15 @@ const Card: React.FC<CardProps> = ({ text, imageSrc, id }) => {
       onClick={handleClick}
       className={`${styles.card} ${theme === 'dark' ? styles.dark : styles.light}`}
     >
-      {imageSrc && <img src={imageSrc} alt={text} className={styles.image} />}
+      {imageSrc && (
+        <Image
+          src={imageSrc}
+          alt={text}
+          width={150}
+          height={150}
+          className={styles.image}
+        />
+      )}
       <p>{text}</p>
     </div>
   );

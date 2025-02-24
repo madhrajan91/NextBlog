@@ -1,31 +1,54 @@
-// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Log.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import Image from 'next/image';
 import styles from './Log.module.css';
 
 interface LogProps {
   title: string;
   content: string;
   imageSrc?: string;
+  id: string; // Add id prop to uniquely identify each log
 }
 
-const Log: React.FC<LogProps> = ({ title, content, imageSrc }) => {
+const Log: React.FC<LogProps> = ({ title, content, imageSrc, id }) => {
   const [likes, setLikes] = useState<number>(0);
   const { theme } = useTheme();
 
+  // Load likes from localStorage when component mounts
+  useEffect(() => {
+    const savedLikes = localStorage.getItem(`log-likes-${id}`);
+    if (savedLikes) {
+      setLikes(parseInt(savedLikes, 10));
+    }
+  }, [id]);
+
   const handleLike = () => {
-    setLikes(likes + 1);
+    const newLikes = likes + 1;
+    setLikes(newLikes);
+    // Save to localStorage
+    localStorage.setItem(`log-likes-${id}`, newLikes.toString());
   };
 
   return (
     <section className={`${styles.log} ${theme === 'dark' ? styles.dark : styles.light}`}>
-      {imageSrc && <img src={imageSrc} alt={title} className={styles.image} />}
+      {imageSrc && (
+        <Image
+          src={imageSrc}
+          alt={title}
+          width={600}
+          height={400}
+          className={styles.image}
+        />
+      )}
       <h1 className={styles.title}>{title}</h1>
       <p>{content}</p>
-
       <div className={styles.likeSection}>
-        <button onClick={handleLike} className={styles.likeButton}>Like</button>
-        <span className={styles.likeCount}>{likes} {likes === 1 ? 'Like' : 'Likes'}</span>
+        <button onClick={handleLike} className={styles.likeButton}>
+          Like
+        </button>
+        <span className={styles.likeCount}>
+          {likes} {likes === 1 ? 'Like' : 'Likes'}
+        </span>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 // filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/index.tsx
 'use client'
 import React, { useState } from 'react';
-import Image from "next/image";
 import Card from "../components/Card";
 import Log from "../components/Log";
 import Header from "../components/Header";
@@ -13,7 +12,7 @@ import withTheme from '../context/withTheme';
 
 const Page = () => {
   const [selectedLog, setSelectedLog] = useState<number | null>(null);
-  const [logs, setLogs] = useState<{ title: string; content: string }[]>([
+  const [logs] = useState<{ title: string; content: string }[]>([
     {
       title: "Introduction",
       content: "This is a sample modern web page built with Next.js. Below, you will find a grid of cards displaying some sample content.",
@@ -26,9 +25,6 @@ const Page = () => {
     "https://via.placeholder.com/150"
   ];
 
-  const handleCardClick = (index: number) => {
-    setSelectedLog(index);
-  };
 
   const handleHomeClick = () => {
     setSelectedLog(null);
