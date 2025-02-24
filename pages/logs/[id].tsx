@@ -1,4 +1,3 @@
-// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/posts/[id].tsx
 import { useRouter } from 'next/router';
 import Log from '../../components/Log';
 import Sidebar from '../../components/Sidebar';
@@ -16,7 +15,11 @@ const LogPage = () => {
       <Header onHomeClick={() => router.push('/')} />
       <div className={commonStyles.maincontainer}>
         <main className={commonStyles.main}>
-          <Log title={`Log ${id}`} content={'This is the content of the log'} />
+          <Log
+            id={id as string}
+            title={`Log ${id}`}
+            content={'This is the content of the log'}
+          />
         </main>
         <Sidebar />
       </div>
