@@ -3,8 +3,8 @@ Blog with comments
 Generated for the most part using the AI Copilot
 
 To Do:
-Fix Theme Provider and Theme Content.
-Connect with a blog
+Added initial support for dark theme
+
 ## Getting Started
 
 First, run the development server:

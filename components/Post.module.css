@@ -67,3 +67,8 @@
   background-color: #333;
   color: #fff;
 }
+.maincontainer {
+  display: flex;
+  flex: 1;
+  background-color: inherit; /* Inherit background color from theme */
+}

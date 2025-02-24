@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AddPostForm from '../components/AddPostForm';
 import commonStyles from '../app/common.module.css';
+import withTheme from '../context/withTheme';
 
 const AddPostPage = () => {
   const router = useRouter();
@@ -16,7 +17,7 @@ const AddPostPage = () => {
   };
 
   return (
-    <div className={commonStyles.container}>
+    <>
       <Header onHomeClick={() => router.push('/')} />
       <div className={commonStyles.maincontainer}>
         <main className={commonStyles.main}>
@@ -24,8 +25,8 @@ const AddPostPage = () => {
         </main>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
-export default AddPostPage;
+export default withTheme(AddPostPage);

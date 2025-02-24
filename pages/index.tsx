@@ -9,9 +9,9 @@ import Sidebar from '@/components/Sidebar';
 import Footer from "../components/Footer";
 import styles from './page.module.css';
 import commonStyles from '../app/common.module.css';
-import { useTheme } from '../context/ThemeContext';
+import withTheme from '../context/withTheme';
 
-export default function Page() {
+const Page = () => {
   const [selectedPost, setSelectedPost] = useState<number | null>(null);
   const [posts, setPosts] = useState<{ title: string; content: string }[]>([
     {
@@ -34,13 +34,11 @@ export default function Page() {
     setSelectedPost(null);
   };
 
-  const { theme } = useTheme();
-
   return (
-    <div className={`${commonStyles.container} ${theme === 'dark' ? commonStyles.dark : commonStyles.light}`}>
+    <>
       <Header onHomeClick={handleHomeClick} />
-      <div className={`${commonStyles.maincontainer} ${theme === 'dark' ? commonStyles.dark : commonStyles.light}`}>
-        <main className={`${commonStyles.main} ${theme === 'dark' ? commonStyles.dark : commonStyles.light}`}>
+      <div className={commonStyles.maincontainer}>
+        <main className={commonStyles.main}>
           {selectedPost !== null ? (
             <Post title={posts[selectedPost].title} content={posts[selectedPost].content} />
           ) : (
@@ -64,6 +62,8 @@ export default function Page() {
         <Sidebar />
       </div>
       <Footer />
-    </div>
+    </>
   );
-}
+};
+
+export default withTheme(Page);

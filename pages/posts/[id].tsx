@@ -1,17 +1,18 @@
+// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/posts/[id].tsx
 import { useRouter } from 'next/router';
 import Post from '../../components/Post';
 import Sidebar from '../../components/Sidebar';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import commonStyles from '../../app/common.module.css';
+import withTheme from '../../context/withTheme';
 
 const PostPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
-
   return (
-    <div className={commonStyles.container}>
+    <>
       <Header onHomeClick={() => router.push('/')} />
       <div className={commonStyles.maincontainer}>
         <main className={commonStyles.main}>
@@ -20,8 +21,8 @@ const PostPage = () => {
         <Sidebar />
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
-export default PostPage;
+export default withTheme(PostPage);
