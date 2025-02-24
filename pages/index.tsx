@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from "next/image";
 import Card from "../components/Card";
-import Post from "../components/Post";
+import Log from "../components/Log";
 import Header from "../components/Header";
 import Sidebar from '@/components/Sidebar';
 import Footer from "../components/Footer";
@@ -12,8 +12,8 @@ import commonStyles from '../app/common.module.css';
 import withTheme from '../context/withTheme';
 
 const Page = () => {
-  const [selectedPost, setSelectedPost] = useState<number | null>(null);
-  const [posts, setPosts] = useState<{ title: string; content: string }[]>([
+  const [selectedLog, setSelectedLog] = useState<number | null>(null);
+  const [logs, setLogs] = useState<{ title: string; content: string }[]>([
     {
       title: "Introduction",
       content: "This is a sample modern web page built with Next.js. Below, you will find a grid of cards displaying some sample content.",
@@ -27,11 +27,11 @@ const Page = () => {
   ];
 
   const handleCardClick = (index: number) => {
-    setSelectedPost(index);
+    setSelectedLog(index);
   };
 
   const handleHomeClick = () => {
-    setSelectedPost(null);
+    setSelectedLog(null);
   };
 
   return (
@@ -39,12 +39,12 @@ const Page = () => {
       <Header onHomeClick={handleHomeClick} />
       <div className={commonStyles.maincontainer}>
         <main className={commonStyles.main}>
-          {selectedPost !== null ? (
-            <Post title={posts[selectedPost].title} content={posts[selectedPost].content} />
+          {selectedLog !== null ? (
+            <Log title={logs[selectedLog].title} content={logs[selectedLog].content} />
           ) : (
             <>
-              {posts.map((post, index) => (
-                <Post key={index} title={post.title} content={post.content} />
+              {logs.map((log, index) => (
+                <Log key={index} title={log.title} content={log.content} />
               ))}
               <div className={styles.grid}>
                 {Array.from({ length: 9 }).map((_, index) => (

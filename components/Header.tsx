@@ -18,8 +18,8 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick }) => {
         <h1 className={styles.title}>My Modern Web Page</h1>
         <nav className={styles.nav}>
           <a href="#" onClick={onHomeClick} className={styles.homeLink}>Home</a>
-          <Link href="/add-post" legacyBehavior>
-            <a className={styles.addPostLink}>Add Post</a>
+          <Link href="/add-log" legacyBehavior>
+            <a className={styles.addPostLink}>Add Log</a>
           </Link>
           <button onClick={toggleTheme} className={styles.themeToggle}>
             Toggle Theme

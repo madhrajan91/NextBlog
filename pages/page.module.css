@@ -1,10 +1,7 @@
 /* filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/page.module.css */
 @import '../app/common.module.css';
 
-body {
-  background-color: white;
-  color: black;
-}
+
 
 .header {
   background-color: #282c34;

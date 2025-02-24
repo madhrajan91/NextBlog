@@ -1,19 +1,19 @@
-// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/add-post.tsx
+// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/add-log.tsx
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import AddPostForm from '../components/AddPostForm';
+import AddLogForm from '../components/AddLogForm';
 import commonStyles from '../app/common.module.css';
 import withTheme from '../context/withTheme';
 
-const AddPostPage = () => {
+const AddLogPage = () => {
   const router = useRouter();
 
-  const handleAddPost = (title: string, content: string) => {
-    // Here you can handle the post submission, e.g., save it to a database
-    console.log('Post added:', { title, content });
-    router.push('/'); // Redirect to the home page after adding the post
+  const handleAddLog = (title: string, content: string) => {
+    // Here you can handle the log submission, e.g., save it to a database
+    console.log('Log added:', { title, content });
+    router.push('/'); // Redirect to the home page after adding the log
   };
 
   return (
@@ -21,7 +21,7 @@ const AddPostPage = () => {
       <Header onHomeClick={() => router.push('/')} />
       <div className={commonStyles.maincontainer}>
         <main className={commonStyles.main}>
-          <AddPostForm onAddPost={handleAddPost} />
+          <AddLogForm onAddLog={handleAddLog} />
         </main>
       </div>
       <Footer />
@@ -29,4 +29,4 @@ const AddPostPage = () => {
   );
 };
 
-export default withTheme(AddPostPage);
+export default withTheme(AddLogPage);

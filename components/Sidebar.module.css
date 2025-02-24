@@ -16,3 +16,15 @@
   background-color: #333;
   color: #fff;
 }
+
+.lightCalendar {
+  --react-calendar-background-color: #fff;
+  --react-calendar-text-color: #000;
+  --react-calendar-border-color: #ddd;
+}
+
+.darkCalendar {
+  --react-calendar-background-color: #333;
+  --react-calendar-text-color: #333;
+  --react-calendar-border-color: #555;
+}

@@ -1,13 +1,13 @@
 // filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/posts/[id].tsx
 import { useRouter } from 'next/router';
-import Post from '../../components/Post';
+import Log from '../../components/Log';
 import Sidebar from '../../components/Sidebar';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import commonStyles from '../../app/common.module.css';
 import withTheme from '../../context/withTheme';
 
-const PostPage = () => {
+const LogPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
@@ -16,7 +16,7 @@ const PostPage = () => {
       <Header onHomeClick={() => router.push('/')} />
       <div className={commonStyles.maincontainer}>
         <main className={commonStyles.main}>
-          <Post title={`Post ${id}`} content={'This is the content of the post'} />
+          <Log title={`Log ${id}`} content={'This is the content of the log'} />
         </main>
         <Sidebar />
       </div>
@@ -25,4 +25,4 @@ const PostPage = () => {
   );
 };
 
-export default withTheme(PostPage);
+export default withTheme(LogPage);

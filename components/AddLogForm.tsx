@@ -1,17 +1,18 @@
+// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/AddLogForm.tsx
 import React, { useState } from 'react';
-import styles from './AddPostForm.module.css';
+import styles from './AddLogForm.module.css';
 
-interface AddPostFormProps {
-  onAddPost: (title: string, content: string) => void;
+interface AddLogFormProps {
+  onAddLog: (title: string, content: string) => void;
 }
 
-const AddPostForm: React.FC<AddPostFormProps> = ({ onAddPost }) => {
+const AddLogForm: React.FC<AddLogFormProps> = ({ onAddLog }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onAddPost(title, content);
+    onAddLog(title, content);
     setTitle('');
     setContent('');
   };
@@ -37,9 +38,9 @@ const AddPostForm: React.FC<AddPostFormProps> = ({ onAddPost }) => {
           required
         />
       </div>
-      <button type="submit">Add Post</button>
+      <button type="submit">Add Log</button>
     </form>
   );
 };
 
-export default AddPostForm;
+export default AddLogForm;

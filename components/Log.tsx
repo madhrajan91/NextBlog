@@ -1,15 +1,15 @@
-// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Post.tsx
+// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Log.tsx
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import styles from './Post.module.css';
+import styles from './Log.module.css';
 
-interface PostProps {
+interface LogProps {
   title: string;
   content: string;
   imageSrc?: string;
 }
 
-const Post: React.FC<PostProps> = ({ title, content, imageSrc }) => {
+const Log: React.FC<LogProps> = ({ title, content, imageSrc }) => {
   const [likes, setLikes] = useState<number>(0);
   const { theme } = useTheme();
 
@@ -18,7 +18,7 @@ const Post: React.FC<PostProps> = ({ title, content, imageSrc }) => {
   };
 
   return (
-    <section className={`${styles.post} ${theme === 'dark' ? styles.dark : styles.light}`}>
+    <section className={`${styles.log} ${theme === 'dark' ? styles.dark : styles.light}`}>
       {imageSrc && <img src={imageSrc} alt={title} className={styles.image} />}
       <h1 className={styles.title}>{title}</h1>
       <p>{content}</p>
@@ -31,4 +31,4 @@ const Post: React.FC<PostProps> = ({ title, content, imageSrc }) => {
   );
 };
 
-export default Post;
+export default Log;

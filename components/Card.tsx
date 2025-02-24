@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ text, imageSrc, id }) => {
   const { theme } = useTheme();
 
   const handleClick = () => {
-    router.push(`/posts/${id}`);
+    router.push(`/logs/${id}`);
   };
 
   return (

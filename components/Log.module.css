@@ -1,7 +1,7 @@
-/* filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Post.module.css */
+/* filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Log.module.css */
 @import '../app/common.module.css';
 
-.post {
+.log {
   margin: 20px auto;
   padding: 20px;
   max-width: 800px;
@@ -66,9 +66,4 @@
   border: 2px solid #555;
   background-color: #333;
   color: #fff;
-}
-.maincontainer {
-  display: flex;
-  flex: 1;
-  background-color: inherit; /* Inherit background color from theme */
 }
