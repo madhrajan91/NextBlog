@@ -1,4 +1,3 @@
-// filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/pages/index.tsx
 'use client'
 import React, { useState } from 'react';
 import Card from "../components/Card";
@@ -12,18 +11,14 @@ import withTheme from '../context/withTheme';
 
 const Page = () => {
   const [selectedLog, setSelectedLog] = useState<number | null>(null);
-  const [logs] = useState<{ title: string; content: string }[]>([
+  const [logs] = useState<{ id: string; title: string; content: string }[]>([
     {
+      id: "1",
       title: "Introduction",
-      content: "This is a sample modern web page built with Next.js. Below, you will find a grid of cards displaying some sample content.",
+      content: "This is a sample modern web page built with Next.js.",
     },
   ]);
 
-  const images = [
-    "https://via.placeholder.com/150",
-    "https://via.placeholder.com/150",
-    "https://via.placeholder.com/150"
-  ];
 
 
   const handleHomeClick = () => {
@@ -36,18 +31,27 @@ const Page = () => {
       <div className={commonStyles.maincontainer}>
         <main className={commonStyles.main}>
           {selectedLog !== null ? (
-            <Log title={logs[selectedLog].title} content={logs[selectedLog].content} />
+            <Log
+              id={logs[selectedLog].id}
+              title={logs[selectedLog].title}
+              content={logs[selectedLog].content}
+            />
           ) : (
             <>
               {logs.map((log, index) => (
-                <Log key={index} title={log.title} content={log.content} />
+                <Log
+                  key={index}
+                  id={log.id}
+                  title={log.title}
+                  content={log.content}
+                />
               ))}
               <div className={styles.grid}>
                 {Array.from({ length: 9 }).map((_, index) => (
                   <Card
                     key={index}
                     text={`This is card number ${index + 1}`}
-                    imageSrc={index < 3 ? images[index] : undefined}
+                    imageSrc={index < 3 ? "https://via.placeholder.com/150" : undefined}
                     id={index + 1}
                   />
                 ))}
