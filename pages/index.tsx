@@ -5,7 +5,7 @@ import Log from "../components/Log";
 import Header from "../components/Header";
 import Sidebar from '@/components/Sidebar';
 import Footer from "../components/Footer";
-import styles from './page.module.css';
+import styles from '../styles/index.module.css';
 import commonStyles from '../app/common.module.css';
 import withTheme from '../context/withTheme';
 

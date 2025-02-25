@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import Image from 'next/image';
-import styles from './Log.module.css';
+import styles from '../styles/Log.module.css';
 
 interface LogProps {
   title: string;

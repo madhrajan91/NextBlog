@@ -1,7 +1,7 @@
 // filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/Footer.tsx
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import styles from './Footer.module.css';
+import styles from '../styles/Footer.module.css';
 
 const Footer: React.FC = () => {
   const { theme } = useTheme();

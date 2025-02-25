@@ -1,6 +1,6 @@
 // filepath: /Users/madhavrajan/Documents/nextjs/NextBlog/components/AddLogForm.tsx
 import React, { useState } from 'react';
-import styles from './AddLogForm.module.css';
+import styles from '../styles/AddLogForm.module.css';
 
 interface AddLogFormProps {
   onAddLog: (title: string, content: string) => void;

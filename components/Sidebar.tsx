@@ -3,7 +3,7 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import styles from './Sidebar.module.css';
+import styles from '../styles/Sidebar.module.css';
 
 const Sidebar: React.FC = () => {
   const { theme } = useTheme();

@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '../context/ThemeContext';
 import Image from 'next/image';
-import styles from './Card.module.css';
+import styles from '../styles/Card.module.css';
 
 interface CardProps {
   text: string;
